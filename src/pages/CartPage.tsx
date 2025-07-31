@@ -116,7 +116,7 @@ const CartPage = () => {
                           {item.size && item.color && <span className="mx-2">•</span>}
                           {item.color && <span>Color: {item.color}</span>}
                         </div>
-                        <p className="mt-2 text-lg font-bold text-gray-900">${item.price}</p>
+                        <p className="mt-2 text-lg font-bold text-gray-900">₹{item.price}</p>
                       </div>
                       
                       <div className="flex items-center space-x-3">
@@ -158,7 +158,7 @@ const CartPage = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-gray-600">
                   <span>Subtotal ({state.itemCount} items)</span>
-                  <span>${state.total.toFixed(2)}</span>
+                  <span>₹{state.total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Shipping</span>
@@ -166,12 +166,12 @@ const CartPage = () => {
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Tax</span>
-                  <span>${(state.total * 0.08).toFixed(2)}</span>
+                  <span>₹{(state.total * 0.05).toFixed(2)}</span>
                 </div>
                 <div className="border-t pt-3">
                   <div className="flex justify-between text-lg font-bold text-gray-900">
                     <span>Total</span>
-                    <span>${(state.total * 1.08).toFixed(2)}</span>
+                    <span>₹{(state.total * 1.08).toFixed(2)}</span>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@ const CartPage = () => {
 
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-600">
-                  Secure checkout powered by Stripe
+                  Secure checkout
                 </p>
               </div>
             </div>

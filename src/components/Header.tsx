@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { state } = useCart();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -12,8 +14,9 @@ const Header = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold text-gray-900flex items-center gap-2">
-          <img src="/images/logo.png" className="h-14 w-auto inline" />
+          {/* Logo */}
+          <Link to="/" className="text-2xl font-bold text-gray-900">
+          <img src="/images/logo.png" className="h-14 w-auto inline"></img>
             ECO THREAD
           </Link>
 
@@ -53,9 +56,14 @@ const Header = () => {
 
           {/* Cart Icon */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/cart" className="p-2 text-gray-700 hover:text-blue-600 transition-colors relative">
               <ShoppingBag className="w-5 h-5" />
-            </button>
+              {state.itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {state.itemCount}
+                </span>
+              )}
+            </Link>
 
             {/* Mobile menu button */}
             <button
