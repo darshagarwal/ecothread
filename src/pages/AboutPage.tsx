@@ -109,26 +109,26 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-green-50 p-8 rounded-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">50,000+</div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Plastic Bottles Recycled</div>
+              <div className="text-4xl font-bold text-green-600 mb-2"></div>
+              <div className="text-lg font-semibold text-gray-900 mb-2"></div>
               <p className="text-gray-600">
-                Converted into sustainable fabric for our clothing line.
+                
               </p>
             </div>
 
             <div className="text-center bg-blue-50 p-8 rounded-lg">
-              <div className="text-4xl font-bold text-blue-600 mb-2">1,000+</div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Fair Trade Workers</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2"></div>
+              <div className="text-lg font-semibold text-gray-900 mb-2"></div>
               <p className="text-gray-600">
-                Supported through our ethical manufacturing partnerships.
+                
               </p>
             </div>
 
             <div className="text-center bg-purple-50 p-8 rounded-lg">
-              <div className="text-4xl font-bold text-purple-600 mb-2">75%</div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Carbon Reduction</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2"></div>
+              <div className="text-lg font-semibold text-gray-900 mb-2"></div>
               <p className="text-gray-600">
-                Compared to traditional fashion manufacturing processes.
+                
               </p>
             </div>
           </div>
