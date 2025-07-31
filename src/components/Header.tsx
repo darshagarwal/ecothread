@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 
@@ -12,8 +12,8 @@ const Header = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-gray-900">
+          <Link to="/" className="text-2xl font-bold text-gray-900flex items-center gap-2">
+          <img src="/images/logo.png" className="h-14 w-auto inline" />
             ECO THREAD
           </Link>
 

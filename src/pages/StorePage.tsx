@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { Grid, List, Star, Heart } from 'lucide-react';
+import { useCart } from '../context/CartContext.tsx';
 
 const StorePage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
+  const { addItem } = useCart();
+  const [selectedSizes, setSelectedSizes] = useState<{ [key: number]: string }>({});
+  const [selectedColors, setSelectedColors] = useState<{ [key: number]: string }>({});
 
   const categories = [
     { id: 'all', name: 'All Products' },
@@ -80,6 +84,28 @@ const StorePage = () => {
   const filteredProducts = products.filter(product => 
     selectedCategory === 'all' || product.category === selectedCategory
   );
+
+  const handleAddToCart = (product: any) => {
+    const size = selectedSizes[product.id] || product.sizes[0];
+    const color = selectedColors[product.id] || product.colors[0];
+    
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      size,
+      color,
+    });
+  };
+
+  const handleSizeSelect = (productId: number, size: string) => {
+    setSelectedSizes(prev => ({ ...prev, [productId]: size }));
+  };
+
+  const handleColorSelect = (productId: number, color: string) => {
+    setSelectedColors(prev => ({ ...prev, [productId]: color }));
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -291,11 +317,28 @@ const StorePage = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-gray-600">Sizes:</span>
-                        <span className="text-sm text-gray-900">{product.sizes.join(', ')}</span>
+                        <div className="flex gap-1">
+                          {product.sizes.map((size) => (
+                            <button
+                              key={size}
+                              onClick={() => handleSizeSelect(product.id, size)}
+                              className={`px-2 py-1 text-xs border rounded transition-colors ${
+                                selectedSizes[product.id] === size || (!selectedSizes[product.id] && size === product.sizes[0])
+                                  ? 'border-blue-500 bg-blue-50 text-blue-700'
+                                  : 'border-gray-300 text-gray-600 hover:border-gray-400'
+                              }`}
+                            >
+                              {size}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     
-                    <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                    <button 
+                      onClick={() => handleAddToCart(product)}
+                      className="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-700 transition-colors"
+                    >
                       Add to Cart
                     </button>
                   </div>

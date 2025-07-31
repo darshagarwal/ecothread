@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Leaf, Heart, Users, Award } from 'lucide-react';
 
 const AboutPage = () => {
@@ -22,18 +22,14 @@ const AboutPage = () => {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2020, ECO THREAD was born from a simple belief: fashion should be beautiful, 
-                accessible, and sustainable. We saw an industry that was harming our planet and decided 
-                to be part of the solution.
+                Founded in 2020, EcoThread is a sustainable fashion startup dedicated to creating eco-friendly clothing that balances style with environmental responsibility. 
+                By using bamboo-based fabrics like lyocell, ethical labor practices, and innovative features such as QR codes that track a garment’s lifecycle, 
+                EcoThread offers high-quality, durable, and transparent fashion choices. The brand targets environmentally conscious consumers and aims to revolutionize the fashion industry 
+                by reducing carbon footprints, minimizing textile waste, and promoting fair practices from production to packaging.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Our journey began with a small team of passionate designers and sustainability experts 
-                who shared a vision of creating clothing that tells a positive story. Every piece in 
-                our collection is carefully crafted using eco-friendly materials and ethical manufacturing processes.
               </p>
               <p className="text-lg text-gray-600">
-                Today, we're proud to be a certified B-Corp, working with suppliers who share our 
-                values and commitment to making fashion a force for good.
               </p>
             </div>
             <div className="relative">
