@@ -301,18 +301,20 @@ const StorePage = () => {
                     <div className="mb-4">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-sm text-gray-600">Colors:</span>
-                        <div className="flex gap-1">
-                          {product.colors.slice(0, 3).map((color, index) => (
+                        <div className="flex gap-2">
+                          {product.colors.map((color, index) => (
                             <div
                               key={index}
-                              className="w-4 h-4 rounded-full border border-gray-300"
+                              className={`w-6 h-6 rounded-full border-2 cursor-pointer transition-all ${
+                                selectedColors[product.id] === color || (!selectedColors[product.id] && index === 0)
+                                  ? 'border-blue-500 ring-2 ring-blue-200'
+                                  : 'border-gray-300 hover:border-gray-400'
+                              }`}
                               style={{ backgroundColor: color.toLowerCase() === 'white' ? '#ffffff' : color.toLowerCase() }}
                               title={color}
+                              onClick={() => handleColorSelect(product.id, color)}
                             />
                           ))}
-                          {product.colors.length > 3 && (
-                            <span className="text-xs text-gray-500">+{product.colors.length - 3}</span>
-                          )}
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
