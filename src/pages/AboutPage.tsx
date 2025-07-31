@@ -22,7 +22,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2020, EcoThread is a sustainable fashion startup dedicated to creating eco-friendly clothing that balances style with environmental responsibility. 
+                Founded in 2024, EcoThread is a sustainable fashion startup dedicated to creating eco-friendly clothing that balances style with environmental responsibility. 
                 By using bamboo-based fabrics like lyocell, ethical labor practices, and innovative features such as QR codes that track a garment’s lifecycle, 
                 EcoThread offers high-quality, durable, and transparent fashion choices. The brand targets environmentally conscious consumers and aims to revolutionize the fashion industry 
                 by reducing carbon footprints, minimizing textile waste, and promoting fair practices from production to packaging.
